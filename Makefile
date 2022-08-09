@@ -39,6 +39,13 @@ compile:
 	$(shell export PYTHONPATH=.:..:$PYTHONPATH)
 	@. venv/bin/activate && cd src && pybabel compile -d ../translations 
 	@echo "The translations are now compiled and ready to be used."
+
+
+update:
+	@echo "update"
+	$(shell export PYTHONPATH=.:..:$PYTHONPATH)
+	@. venv/bin/activate && cd src && pybabel update -i messages.pot -d ../translations
+	@echo "The translations are now updated."
 install:venv
 	: # Activate venv and install smthing inside
 	@echo "Installing..."
